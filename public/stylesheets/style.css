@@ -1,0 +1,16 @@
+about.cssbody {
+    display:grid;
+    font-family: 'Montserrat',sans-serif;
+    color:dimgray;
+    margin-left:15em;
+    margin-right:15em;
+    background-color:whitesmoke;
+}
+
+.intro{
+    display:flex;
+    font-size:2rem;
+    justify-content: center;
+    align-items:center;
+}
+
