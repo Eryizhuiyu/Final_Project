@@ -21,25 +21,25 @@ var a = document.querySelector('#esp_bg');
 console.log(a);
 
 $('#esp_bg').hover(function(){
-    document.body.style.backgroundImage = "url(/public/images/portfolio_img/Atlanta/DSC03297.jpeg)";
+    document.body.style.backgroundImage = "url(images/portfolio_img/Atlanta/DSC03297.jpeg)";
 });
 
 
 $('#sst_bg').hover(function(){
-    document.body.style.backgroundImage = "url(/public/images/portfolio_img/Beijing/DSC03170.jpeg)";
+    document.body.style.backgroundImage = "url(images/portfolio_img/Beijing/DSC03170.jpeg)";
 });
 
 
 $('#ct_bg').hover(function(){
-    document.body.style.backgroundImage = "url(/public/images/portfolio_img/Glasgow/DSC02952.jpeg)";
+    document.body.style.backgroundImage = "url(images/portfolio_img/Glasgow/DSC02952.jpeg)";
 });
 
 
 $('#ph_bg').hover(function(){
-    document.body.style.backgroundImage = "url(/public/images/portfolio_img/Glasgow/DSC02960.jpeg)";
+    document.body.style.backgroundImage = "url(images/portfolio_img/Glasgow/DSC02960.jpeg)";
 });
 
 
 $('#dfs_bg').hover(function(){
-    document.body.style.backgroundImage = "url(/public/images/portfolio_img/Beijing/DSC03295.jpeg)";
+    document.body.style.backgroundImage = "url(images/portfolio_img/Beijing/DSC03295.jpeg)";
 });
