@@ -12,5 +12,10 @@ router.get('/about',(req,res)=>{
 
 */
 
+router.use(bodyParser.urlencode({extended: true}));
+//connect to the database
+let MongoClient = require('mongodb').MongoClient;
+
+let connectionString = "mongodb+ev"
 
 module.exports = router;

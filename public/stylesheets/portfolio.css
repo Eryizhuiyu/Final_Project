@@ -1,9 +1,16 @@
 /*portfolio page css*/
+
+* { margin: 0px; padding: 0px; }
+html {
+    height: 100%;
+}
+
 body{
     font-family: 'Montserrat',sans-serif;
     color:dimgray;
     justify-self: center;
     margin: 3rem;
+    background-position: center;
     background-size:cover;
     background-color:black;
     background-repeat: no-repeat;

@@ -1,4 +1,9 @@
 /*travelog page css*/
+* { margin: 0px; padding: 0px; }
+html {
+    height: 100%;
+}
+
 body{
     font-family: 'Montserrat',sans-serif;
     color:dimgray;
@@ -85,6 +90,7 @@ li a{
 
 .destination{
     padding-left:1rem;
+    white-space: nowrap;
 }
 /*Animations*/
 /*navigation bar*/
@@ -108,8 +114,35 @@ li a{
     display: inline-block;
     vertical-align: top;
     color:black;
+    
 }
 
+/*layout optionB for switch
+.destination{
+    margin: 0;
+    white-space: nowrap;
+}
+.ul_t_photo {
+    display:block;
+    white-space:nowrap;
+    width:1000px;
+    height:100px;
+    overflow-x:scroll;
+    overflow-y:hidden;
+    font-size:1rem;
+    margin:0;
+    padding: 
+}
+
+.li_t_photo {
+    list-style: none;
+    white-space: nowrap;
+    width: 130px;
+    display: inline-block;
+    vertical-align: top;
+    color:black;
+}
+*/
 
 
 
@@ -197,9 +230,12 @@ li a{
 
 .scroll>.destination:hover .ul_t_photo_cover{
     animation: text_change;
-    animation-delay: 0.5s;
+    animation-delay: 0.1s;
     animation-fill-mode: forwards;
     animation-iteration-count: 1;
-    animation-duration: 1s;
+    animation-duration: 0.2s;
 }
 
+img{
+    height:100%;
+}
