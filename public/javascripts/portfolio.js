@@ -23,10 +23,6 @@ $('#esp_bg').hover(function(){
 });
 
 
-$('a').onmouseover(function(){
-    document.body.style.backgroundImage = "url(images/photodata/img_91.JPG)";
-});
-
 
 $('#sst_bg').hover(function(){
     document.body.style.backgroundImage = "url(images/photodata/img_46.JPG)";
