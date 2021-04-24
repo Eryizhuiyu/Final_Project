@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Travelog</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel='stylesheet' href='stylesheets/daily.css'>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400&family=Poiret+One&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!--
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poiret One', cursive;
+    font-family: 'Rajdhani', sans-serif;
+    -->  
+</head>
+    
+    
+<body>
+    <div class="wrapper">
+        <!--Navigation bar-->
+        <div class="logo">
+            <a href='home.html'><img src=images/home_img/web_logo_white.png width=110%></a>
+        </div>
+        <div class="menu">
+            <li><a href='#'>ABOUT</a>
+                <ul class='sub_menu'>                
+                    <li><a href='#'>From</a></li>
+                    <li><a href='#'>My</a></li>
+                    <li><a href='#'>Eyes</a></li>
+                </ul>
+            </li>
+            
+            <li><a href='portfolio.html'>PORTFOLIO</a>
+                <ul class='sub_menu'>
+                    <li><a href='#'>Series A</a></li>
+                    <li><a href='#'>Series B</a></li>
+                    <li><a href='#'>Series C</a></li>
+                </ul>
+            </li>
+            
+            <li><a href='/travelog'>TRAVELOG</a>
+                <ul class='sub_menu'>
+                    <li><a href='#'>Cambodia</a></li>
+                    <li><a href='#'>Miami</a></li>
+                    <li><a href='#'>California Zypher</a></li>
+                </ul>
+            </li>            
+            
+            <li><a href='#'>DAILY</a>
+                <ul class='sub_menu'>                    
+                    <li><a href='#'>Small</a></li>
+                    <li><a href='#'>Things</a></li>
+                    <li><a href='#'>In</a></li>       
+                    <li><a href='#'>Life</a></li>
+                </ul>
+            </li>
+            
+            <li><a href='#'>CONTACT</a>
+                <ul class='sub_menu'>
+                    <li><a href='#'>Email</a></li>
+                    <li><a href='#'>Phone</a></li>
+                    <li><a href='#'>Social Media</a></li>
+                </ul>
+            </li>
+        </div>
+
+        <!--Travel Destination-->
+        <div class="title">
+            <p id="name">PHOTO INFORMATION</p>
+            <div class="info">
+                <ul id = "photo_info">
+                    <li>Travelog <%=results["img_travel_destination"]%></li>
+                    <li>Series <%=results["img_series_name"]%></li>
+                    <li>Category <%=results["img_series_name"]%></li>
+                    <li><%= %></li>
+                    <li><%= %></li>
+
+                </ul>
+            </div>
+        </div>
+        
+        <!--Photo Scroll-->
+        <div class="daily">
+            <figure id=insert>
+                <%console.log(results["img_url"])%>
+                <img src="/<%=results["img_url"]%>" width="100%">
+            </figure>
+            <form action="/" method="post">
+                <input type="text" placeholder= "username" name="name"/>
+                <input type="text" placeholder= "rate" name="quote"/>
+                <button type="submit">Submit</button>    
+
+            </form>
+            <div id="heart"></div>
+            <br>
+            <input type="button" value="next" id="btninsertpic" onclick="insertpic()" />
+
+        </div>
+        
+
+    </div>
+    <script>
+        var b = document.body;
+        b.onclick = playMusic;
+    
+        function playMusic() {
+            var audio = document.createElement("audio");
+            audio.src = "click.wav";
+            audio.play();
+        }
+    </script>
+    
+    <script src=javascripts/daily.js></script>
+    <script src = "javascripts/sound.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    
+</body>
+
+    
+</html>

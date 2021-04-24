@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Travelog</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel='stylesheet' href='stylesheets/travelog.css'>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400&family=Poiret+One&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!--
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poiret One', cursive;
+    font-family: 'Rajdhani', sans-serif;
+    -->  
+</head>
+    
+
+<body>
+    <div class="wrapper">
+        <!--Navigation bar-->
+        <div class="logo">
+            <a href='home.html'><img src=images/home_img/web_logo_white.png width=110%></a>
+        </div>
+        <div class="menu">
+            <li><a href='#'>ABOUT</a>
+                <ul class='sub_menu'>                
+                    <li><a href='#'>From</a></li>
+                    <li><a href='#'>My</a></li>
+                    <li><a href='#'>Eyes</a></li>
+                </ul>
+            </li>
+            
+            <li><a href='portfolio.html'>PORTFOLIO</a>
+                <ul class='sub_menu'>
+                    <li><a href='#'>Series A</a></li>
+                    <li><a href='#'>Series B</a></li>
+                    <li><a href='#'>Series C</a></li>
+                </ul>
+            </li>
+            
+            <li><a href='/travelog'>TRAVELOG</a>
+                <ul class='sub_menu'>
+                    <li><a href='#'>Cambodia</a></li>
+                    <li><a href='#'>Miami</a></li>
+                    <li><a href='#'>California Zypher</a></li>
+                </ul>
+            </li>            
+            
+            <li><a href='daily.html'>DAILY</a>
+                <ul class='sub_menu'>                    
+                    <li><a href='#'>Small</a></li>
+                    <li><a href='#'>Things</a></li>
+                    <li><a href='#'>In</a></li>       
+                    <li><a href='#'>Life</a></li>
+                </ul>
+            </li>
+            
+            <li><a href='#'>CONTACT</a>
+                <ul class='sub_menu'>
+                    <li><a href='#'>Email</a></li>
+                    <li><a href='#'>Phone</a></li>
+                    <li><a href='#'>Social Media</a></li>
+                </ul>
+            </li>
+        </div>
+
+        <!--Travel Destination-->
+        <div class="location">
+            <h3>TRAVELOG</h3>
+            <li>Beijing</li>
+            <li>Las Vegas</li>
+            <li>Cotswold</li>
+            <li>Atlanta</li>
+            <li>Miami</li>
+        </div>
+        
+        <!--Photo Scroll-->
+        <div class="scroll">
+            <li class = "destination">
+                <ul class = "ul_t_photo">
+                    <li class= "li_t_photo"><div class="ul_t_photo_cover">Beijing</div></li>                    
+                    <%for(var i=0; i<Beijing_url.length; i++){
+                        console.log(Beijing_url[i])%>
+                        <li class = "li_t_photo"><a href='/<%=Beijing_url[i]["photo_id"]%>'><img src="/<%= Beijing_url[i]["img_url"]%>" width="100%"></a></li>
+                    <%}%>
+                </ul>
+            </li>
+            
+            <li class = "destination">
+                <ul class = "ul_t_photo">
+                    <li class= "li_t_photo"><div class="ul_t_photo_cover">Las Vegas</div></li>
+                    <%for(var i=0; i<Las_Vegas_url.length; i++){
+                        console.log(Las_Vegas_url[i])%>
+                        <li class = "li_t_photo"><a href='/<%=Las_Vegas_url[i]["photo_id"]%>'><img src="/<%= Las_Vegas_url[i]["img_url"]%>" width="100%"></a></li>
+                    <%}%>
+                </ul>
+            </li>
+            
+            <li class = "destination">
+                <ul class = "ul_t_photo">
+                    <li class= "li_t_photo"><div class="ul_t_photo_cover">Cotswold</div></li>       
+                    <%for(var i=0; i<Cotswold_url.length; i++){
+                        console.log(Cotswold_url[i])%>
+                        <li class = "li_t_photo"><a href='<%=Cotswold_url[i]["photo_id"]%>'><img src="/<%= Cotswold_url[i]["img_url"]%>" width="100%"></a></li>
+                    <%}%>
+                </ul>
+            </li>
+            
+            <li class = "destination">
+                <ul class = "ul_t_photo">
+                    <li class= "li_t_photo"><div class="ul_t_photo_cover">Atlanta</div></li>                     <%for(var i=0; i<Atlanta_url.length; i++){
+                        console.log(Atlanta_url[i])%>
+                        <li class = "li_t_photo"><a href='/<%=Atlanta_url[i]["photo_id"]%>'><img src="/<%=Atlanta_url[i]["img_url"]%>" width="100%"></a></li>
+                    <%}%>
+                </ul>
+            </li>
+            
+            <li class = "destination">               
+                <ul class = "ul_t_photo">
+                    <li class= "li_t_photo"><div class="ul_t_photo_cover">Miami</div></li>                     
+                    <%for(var i=0; i<Miami_url.length; i++){
+                        console.log(Miami_url[i])%>
+                        <li class = "li_t_photo"><a href='/<%=Miami_url[i]["photo_id"]%>'><img src="/<%= Miami_url[i]["img_url"]%>" width="100%"></a></li>
+                    <%}%>
+                </ul>
+            </li>
+                
+            </div>
+        
+
+    </div>
+    <script src = "javascripts/sound.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+</body>
+
+</html>

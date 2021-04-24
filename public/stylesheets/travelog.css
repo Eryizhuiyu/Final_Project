@@ -1,4 +1,6 @@
-/*travelog page css*/
+/*------------------------------------------------------------
+-------------------------travelog css--------------------------*/
+
 * { margin: 0px; padding: 0px; }
 html {
     height: 100%;
@@ -17,11 +19,30 @@ h1,h2,h3,h4,h5,li{
     color:dimgrey;
 }
 
+a {
+    display:flex;
+    color:floralwhite;
+    text-decoration: none;
+    position:relative;
+    top:1rem;
+}
 
+li{
+    list-style: none;
+    text-decoration: none;
+}
+
+li a{
+    color:currentColor;
+}
+
+
+
+/*-------------------------grid layout--------------------------*/
 .wrapper {
-  display: grid;
-  grid-template-columns:100px 2rem auto;
-  grid-template-rows: 100px 2rem auto auto auto auto auto auto;
+    display: grid;
+    grid-template-columns:100px 4rem auto;
+    grid-template-rows: 100px 2rem auto auto auto auto auto auto;
 }
 
 .box {
@@ -32,7 +53,7 @@ h1,h2,h3,h4,h5,li{
   text-align: center;
 }
 .menu{    
-    grid-column: 3 / 4; 
+    grid-column: 2 / 4; 
     grid-row: 1 / 2;
     display:flex;
     flex-direction: row;
@@ -56,6 +77,7 @@ h1,h2,h3,h4,h5,li{
     display:flex;
     flex-direction:column;
     justify-content:center;
+    
 }
 
 .scroll { 
@@ -69,33 +91,14 @@ h1,h2,h3,h4,h5,li{
 }
 
 
-
-a {
-    display:flex;
-    color:floralwhite;
-    text-decoration: none;
-    position:relative;
-    top:1rem;
-}
-
-
-li{
-    list-style: none;
-    text-decoration: none;
-}
-
-li a{
-    color:currentColor;
-}
-
+/*-------------------------filmstrip layout --------------------------*/
 .destination{
     padding-left:1rem;
     white-space: nowrap;
 }
+
 /*Animations*/
 /*navigation bar*/
-
-
 .ul_t_photo {
     display:block;
     white-space:nowrap;
@@ -110,9 +113,10 @@ li a{
 .li_t_photo {
     list-style: none;
     white-space: nowrap;
-    width: 130px;
+    width: 150px;
+    height:100%;
     display: inline-block;
-    vertical-align: top;
+    vertical-align:bottom;
     color:black;
     
 }
@@ -146,8 +150,7 @@ li a{
 
 
 
-
-/*Animations*/
+/*-------------------------Animations --------------------------*/
 /*navigation bar*/
 .sub_menu {
     display:none;
@@ -162,16 +165,15 @@ li a{
 /*photo scroll*/
 .scroll>.destination:hover .ul_t_photo{
     animation: fade;
-    animation-delay: 0.5s;
+    animation-delay:0s;
     animation-fill-mode: forwards;
     animation-iteration-count: 1;
-    animation-duration: 1s;
+    animation-duration: 0.2s;
 }
 
 
-
 .li_t_photo>a:hover img{
-    animation-timing-function: linear;
+    animation-timing-function: 2inear;
     animation: slideout 0.3s, slidein 0.3s 0.1s;
 }
 
@@ -217,23 +219,20 @@ li a{
     }
 }
 
-
+/*black & mask effect of filmstrip*/
 .ul_t_photo_cover{
     font-size:1rem;
     color:black;
     margin:1rem;
     background-color:lightgray;
     font-weight: 300;
-    
-    
 }
 
 .scroll>.destination:hover .ul_t_photo_cover{
     animation: text_change;
-    animation-delay: 0.1s;
     animation-fill-mode: forwards;
     animation-iteration-count: 1;
-    animation-duration: 0.2s;
+    animation-duration: 0.1s;
 }
 
 img{

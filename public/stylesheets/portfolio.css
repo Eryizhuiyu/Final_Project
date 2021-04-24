@@ -70,7 +70,6 @@ h1,h2,h3,h4,h5,li{
 
 
 a {
-    display:flex;
     color:floralwhite;
     text-decoration: none;
     position:relative;
@@ -87,34 +86,6 @@ li a{
     color:currentColor;
 }
 
-.destination{
-    padding-left:1rem;
-}
-/*Animations*/
-/*navigation bar*/
-
-
-.ul_t_photo {
-    display:block;
-    white-space:nowrap;
-    width:1000px;
-    height:100px;
-    overflow-x:scroll;
-    overflow-y:hidden;
-    font-size:1rem;
-}
-
-
-.li_t_photo {
-    list-style: none;
-    white-space: nowrap;
-    width: 130px;
-    display: inline-block;
-    vertical-align: top;
-    color:black;
-}
-
-
 
 /*Animations*/
 /*navigation bar*/
@@ -127,6 +98,7 @@ li a{
     flex-direction: column;
     align-items: flex-start;
 }
+
 
 /*photo scroll*/
 .scroll>.destination:hover .ul_t_photo{

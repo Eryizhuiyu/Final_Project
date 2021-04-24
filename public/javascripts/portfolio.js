@@ -14,32 +14,35 @@ function changeBackground(url) {
     //audio.src = "river_sound.wav";
    //audio.play();
 }
-
-    
     
 var a = document.querySelector('#esp_bg');
 console.log(a);
 
 $('#esp_bg').hover(function(){
-    document.body.style.backgroundImage = "url(images/portfolio_img/Atlanta/DSC03297.jpeg)";
+    document.body.style.backgroundImage = "url(images/photodata/img_91.JPG)";
+});
+
+
+$('a').onmouseover(function(){
+    document.body.style.backgroundImage = "url(images/photodata/img_91.JPG)";
 });
 
 
 $('#sst_bg').hover(function(){
-    document.body.style.backgroundImage = "url(images/portfolio_img/Beijing/DSC03170.jpeg)";
+    document.body.style.backgroundImage = "url(images/photodata/img_46.JPG)";
 });
 
 
 $('#ct_bg').hover(function(){
-    document.body.style.backgroundImage = "url(images/portfolio_img/Glasgow/DSC02952.jpeg)";
+    document.body.style.backgroundImage = "url(images/photodata/img_76.JPG)";
 });
 
 
 $('#ph_bg').hover(function(){
-    document.body.style.backgroundImage = "url(images/portfolio_img/Glasgow/DSC02960.jpeg)";
+    document.body.style.backgroundImage = "url(images/photodata/img_60.JPG)";
 });
 
 
 $('#dfs_bg').hover(function(){
-    document.body.style.backgroundImage = "url(images/portfolio_img/Beijing/DSC03295.jpeg)";
+    document.body.style.backgroundImage = "url(images/photodata/img_72.JPG)";
 });

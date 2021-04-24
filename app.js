@@ -40,4 +40,10 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+app.get('/travelog',function(req,res){
+    res.render('travelog',{});
+});
+
+
+
 module.exports = app;
