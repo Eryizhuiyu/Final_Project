@@ -72,12 +72,10 @@
             <p id="name">PHOTO INFORMATION</p>
             <div class="info">
                 <ul id = "photo_info">
-                    <li>Travelog <%=results["img_travel_destination"]%></li>
-                    <li>Series <%=results["img_series_name"]%></li>
-                    <li>Category <%=results["img_series_name"]%></li>
-                    <li><%= %></li>
-                    <li><%= %></li>
-
+                    <li><b>Travelog</b> <%=results["img_travel_destination"]%></li>
+                    <li><b>Series</b> <%=results["img_series_name"]%></li>
+                    <li><b>Category</b> <%=results["img_category"]%></li>
+                    <li><b>Device</b> <%=results["img_device"]%></li>
                 </ul>
             </div>
         </div>
@@ -88,16 +86,28 @@
                 <%console.log(results["img_url"])%>
                 <img src="/<%=results["img_url"]%>" width="100%">
             </figure>
-            <form action="/" method="post">
+            <form action="/comments_<%= results["photo_id"]%>" method="POST">
+                <%console.log("/comments_"+results["photo_id"])%>
+
                 <input type="text" placeholder= "username" name="name"/>
-                <input type="text" placeholder= "rate" name="quote"/>
+                <input type="text" placeholder= "Leave your comment here!" name="comments"/>
                 <button type="submit">Submit</button>    
 
             </form>
             <div id="heart"></div>
-            <br>
-            <input type="button" value="next" id="btninsertpic" onclick="insertpic()" />
-
+            
+            <h1></h1>
+        </div>
+        
+        <!-- Photo Comments -->
+        <div class="comments">
+            <h1>Comments</h1>
+            <ul id = "comment_display">
+                <% for(var i=results["img_comments"].length-1; i>=0; i--){ %>
+                    <li class="comment_li"><b>User_id:</b> <%=results["img_comments"][i].name%> <br> <b>Comment: </b><%=results["img_comments"][i].comments%></li>
+                <%}%>
+            </ul>
+        
         </div>
         
 

@@ -43,7 +43,15 @@
             
             <li><a href='/travelog'>TRAVELOG</a>
                 <ul class='sub_menu'>
-                    <li><a href='#'>Cambodia</a></li>
+                    
+                    
+                    
+                    
+                    <li><a href='/travelog/<%=Las_Vegas_url[0]["photo_id"]%>'>Beijing</a></li>
+                    
+                    
+                    
+                    
                     <li><a href='#'>Miami</a></li>
                     <li><a href='#'>California Zypher</a></li>
                 </ul>
@@ -83,7 +91,7 @@
                 <ul class = "ul_t_photo">
                     <li class= "li_t_photo"><div class="ul_t_photo_cover">Beijing</div></li>                    
                     <%for(var i=0; i<Beijing_url.length; i++){
-                        console.log(Beijing_url[i])%>
+                        %>
                         <li class = "li_t_photo"><a href='/<%=Beijing_url[i]["photo_id"]%>'><img src="/<%= Beijing_url[i]["img_url"]%>" width="100%"></a></li>
                     <%}%>
                 </ul>
@@ -93,7 +101,7 @@
                 <ul class = "ul_t_photo">
                     <li class= "li_t_photo"><div class="ul_t_photo_cover">Las Vegas</div></li>
                     <%for(var i=0; i<Las_Vegas_url.length; i++){
-                        console.log(Las_Vegas_url[i])%>
+                        %>
                         <li class = "li_t_photo"><a href='/<%=Las_Vegas_url[i]["photo_id"]%>'><img src="/<%= Las_Vegas_url[i]["img_url"]%>" width="100%"></a></li>
                     <%}%>
                 </ul>
@@ -103,7 +111,7 @@
                 <ul class = "ul_t_photo">
                     <li class= "li_t_photo"><div class="ul_t_photo_cover">Cotswold</div></li>       
                     <%for(var i=0; i<Cotswold_url.length; i++){
-                        console.log(Cotswold_url[i])%>
+                        %>
                         <li class = "li_t_photo"><a href='<%=Cotswold_url[i]["photo_id"]%>'><img src="/<%= Cotswold_url[i]["img_url"]%>" width="100%"></a></li>
                     <%}%>
                 </ul>
@@ -112,7 +120,7 @@
             <li class = "destination">
                 <ul class = "ul_t_photo">
                     <li class= "li_t_photo"><div class="ul_t_photo_cover">Atlanta</div></li>                     <%for(var i=0; i<Atlanta_url.length; i++){
-                        console.log(Atlanta_url[i])%>
+                        %>
                         <li class = "li_t_photo"><a href='/<%=Atlanta_url[i]["photo_id"]%>'><img src="/<%=Atlanta_url[i]["img_url"]%>" width="100%"></a></li>
                     <%}%>
                 </ul>
@@ -122,7 +130,7 @@
                 <ul class = "ul_t_photo">
                     <li class= "li_t_photo"><div class="ul_t_photo_cover">Miami</div></li>                     
                     <%for(var i=0; i<Miami_url.length; i++){
-                        console.log(Miami_url[i])%>
+                        %>
                         <li class = "li_t_photo"><a href='/<%=Miami_url[i]["photo_id"]%>'><img src="/<%= Miami_url[i]["img_url"]%>" width="100%"></a></li>
                     <%}%>
                 </ul>

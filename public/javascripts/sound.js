@@ -18,6 +18,8 @@ function playMusic() {
 var b = document.body;
 b.onclick = playMusic;
 
+var a = document.getElementsByTagName("a");
+console.log(a);
 /*play the background music and change the background color when logo is clicked
 function playMusic() {
     this.style.background = "antiquewhite";

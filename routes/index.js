@@ -41,34 +41,69 @@ let connectingString = "mongodb+srv://wsw:123@cluster0.7wcgz.mongodb.net/myFirst
 MongoClient.connect(connectingString, {useUnifiedTopology: true},(err,client) =>{
     if(err) return console.error(err)
     console.log('Connected to database.');
-    
+
     let db = client.db("silvia_photography");
     let photo_data = db.collection("photo_data");
     //photo_data.update({"img_travel_destination": "Gotswold" },{"img_travel_destination":"Cotswold"});
     //photo_data.insertMany(insertData,{ordered:true});
+
     
-    
-    
-    /*biuld a page for each photo*/
+    /*biuld a page for each photo
     console.log("building photo pages..."); 
     photo_data.find().forEach( function(img) { 
         img_page_url = "/"+img.photo_id;
         router.get(img_page_url,(req,res)=>{
             let locQuery = {photo_id:img.photo_id};
             db.collection('photo_data').find(locQuery).toArray().then(results=>{
-                console.log(results);
+                //console.log(results);
                 res.render('img_page.ejs',{results:results[0]})
             })
             .catch(error => console.error(error))
-        });              
+        });     
+        
+        
+        
+        
     }
     );
     console.log('Builded photo pages.');
 
-
+    */
+    
+    /*biuld a page for each destination*/
+    console.log("building photo pages...");     
+  
+    photo_data.find().forEach( function(img) {
+        img_page_url = "/"+img.photo_id;
+        router.get(img_page_url,(req,res)=>{
+            let locQuery = {photo_id:img.photo_id};
+            db.collection('photo_data').find(locQuery).toArray().then(results=>{
+                //console.log(results);
+                res.render('img_page.ejs',{results:results[0]})
+            })
+            .catch(error => console.error(error))
+        }); 
+        
+        router.post('/comments_'+img.photo_id,(req,res)=>{
+            console.log("comments photo idddddddd"+img.photo_id);
+            console.log(req.body);
+            photo_data.update({photo_id: img.photo_id},{$push:{img_comments:req.body}})
+            .then(result => {
+            res.redirect('/'+img.photo_id);
+        })
+        .catch(error => console.error(error))
+        
+        });
+        
+    }
+    );
+    console.log('TESTTTTTTTTT Builded photo pages.');
+    
     
     /*build the dynamic travelog page which updates with the photo database*/
     router.get('/travelog',(req,res)=>{
+
+
         let locQuery = {img_travel_destination:{$ne:null}};
         db.collection('photo_data').find(locQuery).toArray().then(results=>{
             console.log("success!");
@@ -79,20 +114,17 @@ MongoClient.connect(connectingString, {useUnifiedTopology: true},(err,client) =>
             let Atlanta_url = results.filter((item,index,arr)=>{return item.img_travel_destination=="Atlanta"}); 
             
             res.render('travelog.ejs',{Beijing_url:Beijing_url,Las_Vegas_url:Las_Vegas_url,Miami_url:Miami_url, Cotswold_url:Cotswold_url,Atlanta_url:Atlanta_url})
+            
+            
+            //router.get('/Beijing')
         })
         .catch(error => console.error(error))
-    });
+        
+    }       
+              
+    );
     
 
-    
-    router.post('/quotes',(req,res)=> {
-        quotesCollection.insertOne(req.body)
-            .then(result => {
-            console.log(result)
-        })
-    .catch(error => console.error(error))
-    })
-    
     
     router.get('/show-quotes',(req,res)=>{
         let quoteQuery = {name:"karriem", number:{$exists:1}};

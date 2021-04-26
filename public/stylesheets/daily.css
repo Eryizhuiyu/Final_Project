@@ -22,8 +22,8 @@ h1,h2,h3,h4,h5,li{
 
 .wrapper {
   display: grid;
-  grid-template-columns: 100px auto;
-  grid-template-rows: 100px auto;
+  grid-template-columns: 100px 2fr 1fr;
+  grid-template-rows: 100px auto auto;
 }
 
 .box {
@@ -34,7 +34,7 @@ h1,h2,h3,h4,h5,li{
   text-align: center;
 }
 .menu{    
-    grid-column: 2 / 3; 
+    grid-column: 2 / 4; 
     grid-row: 1 / 2;
     display:flex;
     padding-left: 3rem;
@@ -53,7 +53,7 @@ h1,h2,h3,h4,h5,li{
     opacity: 80%;
 }
 .title {   
-    grid-column: 1 / 2; 
+    grid-column: 3 / 4; 
     grid-row: 2 / 3;
     display:flex;
     flex-direction:column;
@@ -70,6 +70,16 @@ h1,h2,h3,h4,h5,li{
     justify-content:center;
 }
 
+.comments {
+    grid-column: 2 / 4; 
+    grid-row: 3 / 4;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:2rem;
+    border-color: slategray;
+    border: 10px;
+}
 
 
 a {
@@ -120,8 +130,21 @@ li a{
 }
 
 #photo_info li{
+    font-size:0.2rem;
     
 }
+
+#comment_display {
+    display:grid;
+    grid-row-gap: 2rem;
+    padding:0;
+}
+
+.comment_li {
+    background-color:gainsboro;
+    padding: 1rem;
+}
+
 /*layout optionB for switch
 .destination{
     margin: 0;
