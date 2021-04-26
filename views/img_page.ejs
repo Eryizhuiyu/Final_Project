@@ -72,10 +72,10 @@
             <p id="name">PHOTO INFORMATION</p>
             <div class="info">
                 <ul id = "photo_info">
-                    <li><b>Travelog</b> <%=results["img_travel_destination"]%></li>
-                    <li><b>Series</b> <%=results["img_series_name"]%></li>
-                    <li><b>Category</b> <%=results["img_category"]%></li>
-                    <li><b>Device</b> <%=results["img_device"]%></li>
+                    <li><b>Travelog: </b> <%=results["img_travel_destination"]%></li>
+                    <li><b>Series: </b> <%=results["img_series_name"]%></li>
+                    <li><b>Category: </b> <%=results["img_category"]%></li>
+                    <li><b>Device: </b> <%=results["img_device"]%></li>
                 </ul>
             </div>
         </div>
@@ -86,14 +86,6 @@
                 <%console.log(results["img_url"])%>
                 <img src="/<%=results["img_url"]%>" width="100%">
             </figure>
-            <form action="/comments_<%= results["photo_id"]%>" method="POST">
-                <%console.log("/comments_"+results["photo_id"])%>
-
-                <input type="text" placeholder= "username" name="name"/>
-                <input type="text" placeholder= "Leave your comment here!" name="comments"/>
-                <button type="submit">Submit</button>    
-
-            </form>
             <div id="heart"></div>
             
             <h1></h1>
@@ -101,12 +93,28 @@
         
         <!-- Photo Comments -->
         <div class="comments">
-            <h1>Comments</h1>
+            <p id="name">COMMENTS</p>
             <ul id = "comment_display">
                 <% for(var i=results["img_comments"].length-1; i>=0; i--){ %>
                     <li class="comment_li"><b>User_id:</b> <%=results["img_comments"][i].name%> <br> <b>Comment: </b><%=results["img_comments"][i].comments%></li>
                 <%}%>
             </ul>
+        
+        </div>
+        <div class="user_form">            
+            
+            <form action="/comments_<%= results["photo_id"]%>" method="POST">
+                <%console.log("/comments_"+results["photo_id"])%>
+                <label for='user_info'>Name</label>
+                <input id = "user_info" type="text" placeholder= "username" name="name"/>
+                <br>
+                <label for="commenting">Comment</label>
+                <input  id = "commenting" type="text" placeholder= "Leave your comment here!" name="comments" height=800px/>
+                <button id = "submit_comment" type="submit">Submit</button>    
+
+            </form>
+            
+        
         
         </div>
         
